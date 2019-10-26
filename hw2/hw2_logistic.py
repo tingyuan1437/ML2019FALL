@@ -80,7 +80,7 @@ class LogisticRegression():
     def predict(self, X_test, add_intercept=False):
         z = np.matmul(X_test, self.w)
         f_x = np.apply_along_axis(self.__sigmoid, 1, z).reshape(-1,1)
-        Y_test = np.apply_along_axis(self.__classify, 1, f_x).reshape(-1,1)
+        Y_test = np.apply_along_axis(self.__classify, 1, z).reshape(-1,1)
         return Y_test
 
 if __name__ == '__main__':
